@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Mack 24 Hostel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .gallery-intro { text-align: center; margin-bottom: 48px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 240px;
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .gallery-item:hover { transform: scale(1.02); box-shadow: var(--shadow-lg); }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      font-size: 2.5rem;
+    }
+    .gallery-placeholder span { font-size: 0.85rem; font-family: 'DM Sans', sans-serif; font-weight: 500; letter-spacing: 0.05em; }
+    .g1 { background: linear-gradient(135deg, #3D2B1F 0%, #6B4226 100%); color: rgba(255,255,255,0.7); }
+    .g2 { background: linear-gradient(135deg, #1A2B1A 0%, #2E5230 100%); color: rgba(255,255,255,0.7); }
+    .g3 { background: linear-gradient(135deg, #1A1A2B 0%, #2E2E5A 100%); color: rgba(255,255,255,0.7); }
+    .g4 { background: linear-gradient(135deg, #2B2218 0%, #4A3820 100%); color: rgba(255,255,255,0.7); }
+    .g5 { background: linear-gradient(135deg, #1F2B20 0%, #384D39 100%); color: rgba(255,255,255,0.7); }
+    .g6 { background: linear-gradient(135deg, #2B1A1A 0%, #5A2E2E 100%); color: rgba(255,255,255,0.7); }
+    .g7 { background: linear-gradient(135deg, #221A2B 0%, #402E5A 100%); color: rgba(255,255,255,0.7); }
+
+    .upload-note {
+      margin-top: 48px; padding: 32px; text-align: center;
+      background: var(--cream); border-radius: var(--radius); border: 2px dashed var(--border);
+    }
+    .upload-note h3 { margin-bottom: 8px; }
+    .upload-note p { color: var(--text-light); font-size: 0.9rem; }
+
+    @media(max-width:700px){
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+      .gallery-item.wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <a href="../index.html" class="nav-logo">Mack <span>24</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="amenities.html">Amenities</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="booking.html" class="btn-nav">Book a Room</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label">Photo Tour</p>
+    <h1>Gallery</h1>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-intro">
+        <p class="section-label center">Take a Look Around</p>
+        <h2>Life Inside Mack 24</h2>
+        <p style="color:var(--text-light); max-width:500px; margin:0 auto;">Browse photos of our rooms, amenities, and common areas. Replace the placeholders below with your real hostel photos.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item wide g1">
+          <div class="gallery-placeholder">🛏️<span>Single Room</span></div>
+        </div>
+        <div class="gallery-item tall g2">
+          <div class="gallery-placeholder">🌿<span>Garden Area</span></div>
+        </div>
+        <div class="gallery-item g3">
+          <div class="gallery-placeholder">🍳<span>Kitchen</span></div>
+        </div>
+        <div class="gallery-item g4">
+          <div class="gallery-placeholder">📚<span>Study Lounge</span></div>
+        </div>
+        <div class="gallery-item wide g5">
+          <div class="gallery-placeholder">🛋️<span>Living Room / TV Lounge</span></div>
+        </div>
+        <div class="gallery-item g6">
+          <div class="gallery-placeholder">🏋️<span>Gym Area</span></div>
+        </div>
+        <div class="gallery-item g7">
+          <div class="gallery-placeholder">🏠<span>Hostel Exterior</span></div>
+        </div>
+      </div>
+
+      <div class="upload-note">
+        <h3>📸 Add Your Real Photos Here</h3>
+        <p>To replace these placeholders with real photos: open <code>gallery.html</code> in VS Code, find the <code>.gallery-item</code> divs, and replace the placeholder content with <code>&lt;img src="../images/your-photo.jpg" alt="Room name" style="width:100%;height:100%;object-fit:cover;"&gt;</code>. Put your photos in the <code>images/</code> folder.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">Mack <span>24</span></a>
+        <p>A haven of luxury and comfort for female students and working-class queens in Yaba, Lagos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="rooms.html">Rooms & Pricing</a></li>
+          <li><a href="amenities.html">Amenities</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="booking.html">Book a Room</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 24 Majaro Street, Onike, Yaba, Lagos</li>
+          <li>📞 <a href="tel:+234XXXXXXXXXX">+234 XXX XXX XXXX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Mack 24 Hostel. All rights reserved.</p></div>
+  </footer>
+
+  <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <script src="../js/main.js"></script>
+</body>
+</html>

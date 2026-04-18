@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Room — Mack 24 Hostel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .booking-section { padding: 80px 0; }
+    .booking-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .booking-info h2 { margin-bottom: 16px; }
+    .booking-info p { color: var(--text-light); margin-bottom: 24px; }
+    .info-steps { margin-top: 32px; }
+    .step { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold); color: var(--dark);
+      font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-text h4 { font-size: 1rem; margin-bottom: 4px; }
+    .step-text p { font-size: 0.88rem; color: var(--text-light); margin: 0; }
+
+    .booking-form-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .booking-form-card h3 { margin-bottom: 28px; font-size: 1.5rem; }
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-submit:hover { background: var(--gold-dark); transform: translateY(-2px); }
+    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+    .form-note { font-size: 0.8rem; color: var(--text-light); text-align: center; margin-top: 12px; }
+    @media(max-width:900px){ .booking-wrapper{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <a href="../index.html" class="nav-logo">Mack <span>24</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="amenities.html">Amenities</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="booking.html" class="btn-nav">Book a Room</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-label">Applications</p>
+    <h1>Book a Room</h1>
+  </div>
+
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-wrapper">
+        <div class="booking-info">
+          <p class="section-label">How It Works</p>
+          <h2>Simple Application Process</h2>
+          <p>Securing your space at Mack 24 is easy. Fill out the form and our team will get back to you within 24 hours.</p>
+          <div class="info-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-text">
+                <h4>Submit Your Application</h4>
+                <p>Fill out the form with your details and preferred room type.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <h4>We'll Contact You</h4>
+                <p>Our team will reach out within 24 hours to confirm availability and pricing.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <h4>Visit & Inspect</h4>
+                <p>Schedule a visit to see the hostel and the available rooms in person.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-text">
+                <h4>Pay & Move In</h4>
+                <p>Complete payment, sign your agreement, and welcome home, Queen! 👑</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:32px; padding:20px; background:var(--cream); border-radius:var(--radius); border:1px solid var(--border);">
+            <p style="font-size:0.9rem; color:var(--text-light); margin:0;"><strong style="color:var(--text);">Prefer to call or WhatsApp?</strong><br/>Reach us at <a href="tel:+234XXXXXXXXXX" style="color:var(--gold-dark);">+234 XXX XXX XXXX</a> or message us on <a href="https://wa.me/234XXXXXXXXXX" style="color:var(--gold-dark);" target="_blank">WhatsApp</a> directly.</p>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <h3>Room Application Form</h3>
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="e.g. Amaka"/>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="e.g. Okafor"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com"/>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="+234 XXX XXX XXXX"/>
+            </div>
+            <div class="form-group">
+              <label for="occupation">Occupation *</label>
+              <select id="occupation" name="occupation" required>
+                <option value="">-- Select one --</option>
+                <option>Student (UNILAG)</option>
+                <option>Student (YABATECH)</option>
+                <option>Student (Other)</option>
+                <option>Working Professional</option>
+                <option>NYSC Member</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="roomType">Preferred Room Type *</label>
+              <select id="roomType" name="roomType" required>
+                <option value="">-- Select room type --</option>
+                <option>Single Room</option>
+                <option>Double Room (shared with 1 person)</option>
+                <option>Shared Room (up to 6 people)</option>
+                <option>No preference — show me options</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="moveIn">Expected Move-in Date *</label>
+              <input type="date" id="moveIn" name="moveIn" required/>
+            </div>
+            <div class="form-group">
+              <label for="duration">Expected Duration of Stay</label>
+              <select id="duration" name="duration">
+                <option value="">-- Select duration --</option>
+                <option>1 semester (approx. 6 months)</option>
+                <option>1 academic year</option>
+                <option>Indefinite / Working class</option>
+                <option>Short stay (less than 3 months)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Any Additional Information or Questions</label>
+              <textarea id="message" name="message" rows="3" placeholder="E.g. Do you have availability for two friends? Do you have rooms on a specific floor?"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit Application →</button>
+            <p class="form-note">We will never share your details with third parties. 🔒</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo">Mack <span>24</span></a>
+        <p>A haven of luxury and comfort for female students and working-class queens in Yaba, Lagos.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="rooms.html">Rooms & Pricing</a></li>
+          <li><a href="amenities.html">Amenities</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 24 Majaro Street, Onike, Yaba, Lagos</li>
+          <li>📞 <a href="tel:+234XXXXXXXXXX">+234 XXX XXX XXXX</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Mack 24 Hostel. All rights reserved.</p></div>
+  </footer>
+
+  <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+  <script src="../js/main.js"></script>
+</body>
+</html>
