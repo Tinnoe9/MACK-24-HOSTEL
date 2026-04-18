@@ -3,21 +3,21 @@
    =========================== */
 
 :root {
-  --gold: #C9A84C;
-  --gold-light: #E8C97A;
-  --gold-dark: #9A7A30;
-  --cream: #FAF6EF;
-  --dark: #1A1208;
-  --dark2: #2D2210;
-  --text: #3D3020;
-  --text-light: #7A6B52;
+  --gold: #9B6DFF;
+  --gold-light: #C4A3FF;
+  --gold-dark: #6B3FD4;
+  --cream: #F5F0FF;
+  --dark: #0F0A1A;
+  --dark2: #1E1235;
+  --text: #2D1F4A;
+  --text-light: #6B5A8A;
   --white: #FFFFFF;
-  --light-bg: #F5EFE3;
-  --border: #E8DCC8;
+  --light-bg: #EDE6FF;
+  --border: #D8C8F0;
   --radius: 16px;
   --radius-sm: 8px;
-  --shadow: 0 4px 32px rgba(26,18,8,0.10);
-  --shadow-lg: 0 12px 48px rgba(26,18,8,0.16);
+  --shadow: 0 4px 32px rgba(15,10,26,0.12);
+  --shadow-lg: 0 12px 48px rgba(15,10,26,0.20);
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
@@ -144,10 +144,10 @@ h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 20px; }
   transition: var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(26, 18, 8, 0.97);
+  background: rgba(15, 10, 26, 0.97);
   backdrop-filter: blur(12px);
   padding: 14px 40px;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 20px rgba(15,10,26,0.4);
 }
 
 .nav-logo {
@@ -200,17 +200,16 @@ h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 20px; }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    linear-gradient(135deg, #2D1B00 0%, #1A1208 50%, #0D0800 100%);
+    linear-gradient(135deg, #1E1235 0%, #0F0A1A 50%, #070412 100%);
 }
-
 /* Decorative pattern */
 .hero-bg::before {
   content: '';
   position: absolute; inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 40%),
-    radial-gradient(circle at 60% 80%, rgba(201,168,76,0.06) 0%, transparent 35%);
+    radial-gradient(circle at 20% 50%, rgba(155,109,255,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(155,109,255,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(155,109,255,0.06) 0%, transparent 35%);
 }
 
 .hero-bg::after {
@@ -221,7 +220,7 @@ h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 20px; }
 
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(26,18,8,0.9) 0%, rgba(26,18,8,0.5) 60%, transparent 100%);
+  background: linear-gradient(to right, rgba(15,10,26,0.9) 0%, rgba(15,10,26,0.5) 60%, transparent 100%);
 }
 
 .hero-content {
